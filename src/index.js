@@ -7,14 +7,18 @@ import App from './App'
 import 'normalize.css'
 import './assets/css/index.less'
 import store from './store'
+import { ThemeProvider } from 'styled-components'
+import theme from './assets/theme'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <Suspense fallback="loading...">
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </ThemeProvider>
   </Suspense>
 )
