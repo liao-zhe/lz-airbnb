@@ -5,7 +5,7 @@ export const SectionHeaderWrapper = styled.div`
   .title {
     font-size: 22px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
   .sbutitle {
     font-size: 16px;
