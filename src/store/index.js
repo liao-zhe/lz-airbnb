@@ -1,9 +1,11 @@
 // 创建store
-import { configureStore } from "@reduxjs/toolkit"
+import { configureStore } from '@reduxjs/toolkit'
+import homeReducer from './modules/home'
 
 const store = configureStore({
-    reducer:{
-    }
+  reducer: {
+    home: homeReducer
+  }
 })
 
 export default store
