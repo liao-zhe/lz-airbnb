@@ -11,3 +11,10 @@ export function getHomeHighscoreData() {
     url: '/home/highscore'
   })
 }
+
+export function getHomeDiscountData() {
+  return myRequest.get({
+    url: '/home/discount'
+  })
+}
+
