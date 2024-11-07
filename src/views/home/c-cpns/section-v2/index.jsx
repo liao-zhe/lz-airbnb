@@ -29,7 +29,7 @@ const SectionV2 = memo(props => {
         roomList={infoData.dest_list?.[name]}
         itemwidth="33.333%"
       ></SectionRooms>
-      <SectionFooter />
+      <SectionFooter name={name}/>
     </SectionWrapperV2>
   )
 })

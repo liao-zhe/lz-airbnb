@@ -6,10 +6,10 @@ export const SectionFooterWrapper = styled.div`
   .more {
     display: flex;
     align-items: center;
-    cursor: pointer;
-
     font-size: 17px;
     font-weight: 700;
+    cursor: pointer;
+
     &:hover {
       text-decoration: underline;
     }
