@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
 export const FooterWrapper = styled.div`
+  margin-top: 100px;
+  border-top: 1px solid #ebebeb;
+  
   .footer {
     box-sizing: border-box;
     width: 1080px;
