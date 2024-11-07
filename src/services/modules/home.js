@@ -29,3 +29,9 @@ export function getHomeLongforData() {
     url: '/home/longfor'
   })
 }
+
+export function getHomePlusData() {
+  return myRequest.get({
+    url: '/home/plus'
+  })
+}

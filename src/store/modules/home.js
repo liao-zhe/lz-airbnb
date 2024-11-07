@@ -4,7 +4,8 @@ import {
   getHomeGoodPriceData,
   getHomeHighscoreData,
   getHomeHotRecommendData,
-  getHomeLongforData
+  getHomeLongforData,
+  getHomePlusData
 } from '@/services/modules/home'
 
 // 异步获取数据
@@ -26,6 +27,9 @@ export const fetchHomeListAciton = createAsyncThunk(
     getHomeLongforData().then(res => {
       store.dispatch(changeLongforInfoAction(res))
     })
+    getHomePlusData().then(res => {
+      store.dispatch(changePlusInfoAction(res))
+    })
   }
 )
 
@@ -36,7 +40,8 @@ const homeSlice = createSlice({
     highScoreInfo: {},
     discountInfo: {},
     hotRecommendInfo: {},
-    longforInfo: {}
+    longforInfo: {},
+    plusInfo: {}
   },
   reducers: {
     changeGoodPriceInfoAction(state, { payload }) {
@@ -53,6 +58,9 @@ const homeSlice = createSlice({
     },
     changeLongforInfoAction(state, { payload }) {
       state.longforInfo = payload
+    },
+    changePlusInfoAction(state, { payload }) {
+      state.plusInfo = payload
     }
   },
   extraReducers: builder => {
@@ -67,6 +75,7 @@ export const {
   changeHighScoreInfoAction,
   changeHomeDiscountInfoActon,
   changeHomeRecommendInfoAciton,
-  changeLongforInfoAction
+  changeLongforInfoAction,
+  changePlusInfoAction
 } = homeSlice.actions
 export default homeSlice.reducer

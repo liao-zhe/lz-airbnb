@@ -7,6 +7,7 @@ import SectionV1 from './c-cpns/section-v1'
 import SectionV2 from './c-cpns/section-v2'
 import { isEmptyObject } from '@/utils/isEmptyObject'
 import HomeLongfor from './c-cpns/home-longfor'
+import SectionV3 from './c-cpns/section-v3'
 
 const Home = memo(() => {
   /** 从redux中获取数据 */
@@ -15,14 +16,16 @@ const Home = memo(() => {
     highScoreInfo,
     discountInfo,
     hotRecommendInfo,
-    longforInfo
+    longforInfo,
+    plusInfo
   } = useSelector(
     state => ({
       goodsPriceInfo: state.home.goodsPriceInfo,
       highScoreInfo: state.home.highScoreInfo,
       discountInfo: state.home.discountInfo,
       hotRecommendInfo: state.home.hotRecommendInfo,
-      longforInfo: state.home.longforInfo
+      longforInfo: state.home.longforInfo,
+      plusInfo: state.home.plusInfo
     }),
     shallowEqual
   )
@@ -46,6 +49,7 @@ const Home = memo(() => {
           <SectionV1 infoData={goodsPriceInfo} />
         )}
         {isEmptyObject(highScoreInfo) && <SectionV1 infoData={highScoreInfo} />}
+        {isEmptyObject(plusInfo) && <SectionV3 infoData={plusInfo} />}
       </div>
     </HomeWrapper>
   )
