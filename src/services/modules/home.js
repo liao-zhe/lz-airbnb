@@ -18,3 +18,8 @@ export function getHomeDiscountData() {
   })
 }
 
+export function getHomeHotRecommendData() {
+  return myRequest.get({
+    url: '/home/hotrecommenddest'
+  })
+}
