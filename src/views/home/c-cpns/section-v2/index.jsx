@@ -27,7 +27,7 @@ const SectionV2 = memo(props => {
       <SectionTabs tabNames={tabNames} tabClick={tabClick} />
       <SectionRooms
         roomList={infoData.dest_list?.[name]}
-        itemwidth="33.333%"
+        $itemwidth="33.333%"
       ></SectionRooms>
       <SectionFooter name={name}/>
     </SectionWrapperV2>

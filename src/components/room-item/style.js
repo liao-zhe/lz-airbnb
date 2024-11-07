@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ItemWrapper = styled.div`
   flex-shrink: 0;
   box-sizing: border-box;
-  width: ${props => props.itemwidth};
+  width: ${props => props.$itemwidth};
   padding: 8px;
 
   .inner {
@@ -28,7 +28,7 @@ export const ItemWrapper = styled.div`
     margin: 10px 0 5px;
     font-size: 12px;
     font-weight: 700;
-    color: ${props => props.desccolor};
+    color: ${props => props.$desccolor};
   }
   .name {
     font-size: 16px;

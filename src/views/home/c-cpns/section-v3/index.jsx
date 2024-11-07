@@ -14,7 +14,7 @@ const SectionV3 = memo(props => {
       <div className="room-list">
         <ScrollView>
           {infoData.list.map(item => {
-            return <RoomItem key={item.id} itemData={item} itemwidth="20%" />
+            return <RoomItem key={item.id} itemData={item} $itemwidth="20%" />
           })}
         </ScrollView>
       </div>

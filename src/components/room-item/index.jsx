@@ -5,12 +5,12 @@ import { Rating } from '@mui/material'
 // import { Rating } from '@mui/material'
 
 const RoomItem = memo(props => {
-  const { itemData, itemwidth = '25%' } = props
+  const { itemData, $itemwidth = '25%' } = props
 
   return (
     <ItemWrapper
-      desccolor={itemData?.verify_info?.text_color || '#39576a'}
-      itemwidth={itemwidth}
+      $desccolor={itemData?.verify_info?.text_color || '#39576a'}
+      $itemwidth={$itemwidth}
     >
       <div className="inner">
         <div className="cover">
