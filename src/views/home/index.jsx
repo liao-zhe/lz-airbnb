@@ -6,19 +6,26 @@ import { fetchHomeListAciton } from '@/store/modules/home'
 import SectionV1 from './c-cpns/section-v1'
 import SectionV2 from './c-cpns/section-v2'
 import { isEmptyObject } from '@/utils/isEmptyObject'
+import HomeLongfor from './c-cpns/home-longfor'
 
 const Home = memo(() => {
   /** 从redux中获取数据 */
-  const { goodsPriceInfo, highScoreInfo, discountInfo, hotRecommendInfo } =
-    useSelector(
-      state => ({
-        goodsPriceInfo: state.home.goodsPriceInfo,
-        highScoreInfo: state.home.highScoreInfo,
-        discountInfo: state.home.discountInfo,
-        hotRecommendInfo: state.home.hotRecommendInfo
-      }),
-      shallowEqual
-    )
+  const {
+    goodsPriceInfo,
+    highScoreInfo,
+    discountInfo,
+    hotRecommendInfo,
+    longforInfo
+  } = useSelector(
+    state => ({
+      goodsPriceInfo: state.home.goodsPriceInfo,
+      highScoreInfo: state.home.highScoreInfo,
+      discountInfo: state.home.discountInfo,
+      hotRecommendInfo: state.home.hotRecommendInfo,
+      longforInfo: state.home.longforInfo
+    }),
+    shallowEqual
+  )
 
   /** 派发异步的事件: 发送网络请求 */
   const dispatch = useDispatch()
@@ -34,6 +41,7 @@ const Home = memo(() => {
         {isEmptyObject(hotRecommendInfo) && (
           <SectionV2 infoData={hotRecommendInfo} />
         )}
+        {isEmptyObject(longforInfo) && <HomeLongfor infoData={longforInfo} />}
         {isEmptyObject(goodsPriceInfo) && (
           <SectionV1 infoData={goodsPriceInfo} />
         )}
