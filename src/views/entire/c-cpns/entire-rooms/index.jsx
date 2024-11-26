@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { memo } from 'react'
 import { EntireRoomsWrapper } from './style'
 import RoomItem from '@/components/room-item'
@@ -26,7 +25,5 @@ const EntireRooms = memo(props => {
 		</EntireRoomsWrapper>
 	)
 })
-
-EntireRooms.propTypes = {}
 
 export default EntireRooms

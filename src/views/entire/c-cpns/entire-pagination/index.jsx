@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { memo } from 'react'
 import { EntirePaginationWrapper } from './style'
 import { Pagination } from '@mui/material'
