@@ -36,7 +36,7 @@ const DetailPictures = memo(props => {
 				</div>
 			</div>
 			{pictureUrls && (
-				<div className="show-btn" onClick={showPreviewHandle}>
+				<div className="show-btn" onClick={e => showPreviewHandle()}>
 					查看照片
 				</div>
 			)}

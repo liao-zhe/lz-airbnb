@@ -92,6 +92,10 @@ const PhotoWall = memo(props => {
 	)
 })
 
-PhotoWall.propTypes = {}
+PhotoWall.propTypes = {
+	pictureUrls: PropTypes.array,
+	imgIndex: PropTypes.number,
+	closeClick: PropTypes.func
+}
 
 export default PhotoWall
