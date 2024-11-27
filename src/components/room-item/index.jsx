@@ -9,20 +9,27 @@ import IconLeft from '@/assets/svg/icon-left'
 import IconRight from '@/assets/svg/icon-right'
 
 const RoomItem = memo(props => {
-	const { itemData, $itemwidth = '25%' } = props
+	const { itemData, $itemwidth = '25%', itemClick } = props
 	const [selectIndex, setSelectIndex] = useState(0)
 	const swiperRef = useRef()
 
-	const controlClickHandle = type => {
+	const controlClickHandle = (e, type) => {
+		e.stopPropagation()
 		type === 'prev' ? swiperRef.current.prev() : swiperRef.current.next()
 		let newIndex = type === 'prev' ? selectIndex - 1 : selectIndex + 1
 		if (newIndex < 0) newIndex = itemData.picture_urls.length - 1
 		if (newIndex > itemData.picture_urls.length - 1) newIndex = 0
 		setSelectIndex(newIndex)
 	}
+	const itemClickHandle = () => {
+		itemClick && itemClick()
+	}
 
 	return (
-		<ItemWrapper $desccolor={itemData?.verify_info?.text_color || '#39576a'} $itemwidth={$itemwidth}>
+		<ItemWrapper
+			$desccolor={itemData?.verify_info?.text_color || '#39576a'}
+			$itemwidth={$itemwidth}
+			onClick={() => itemClickHandle()}>
 			<div className="inner">
 				{!itemData.picture_urls ? (
 					<div className="cover">
@@ -31,10 +38,10 @@ const RoomItem = memo(props => {
 				) : (
 					<div className="slider">
 						<div className="control">
-							<div className="btn left" onClick={e => controlClickHandle('prev')}>
+							<div className="btn left" onClick={e => controlClickHandle(e, 'prev')}>
 								<IconLeft width={28} height={28} />
 							</div>
-							<div className="btn right" onClick={e => controlClickHandle('next')}>
+							<div className="btn right" onClick={e => controlClickHandle(e, 'next')}>
 								<IconRight width={28} height={28} />
 							</div>
 						</div>
