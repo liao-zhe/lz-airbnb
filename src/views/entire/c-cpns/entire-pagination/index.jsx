@@ -18,7 +18,6 @@ const EntirePaginition = memo(props => {
 
 	const dispatch = useDispatch()
 	const pageChangeHandler = (event, newPage) => {
-		window.scroll(0, 0)
 		dispatch(fetchEntireDataAction(newPage - 1))
 	}
 	return (
