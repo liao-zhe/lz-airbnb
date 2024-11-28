@@ -1,13 +1,14 @@
-import React, { memo, useEffect } from "react"
-import HomeBanner from "./c-cpns/home-banner"
-import { HomeWrapper } from "./style"
-import { useDispatch, useSelector, shallowEqual } from "react-redux"
-import { fetchHomeListAciton } from "@/store/modules/home"
-import SectionV1 from "./c-cpns/section-v1"
-import SectionV2 from "./c-cpns/section-v2"
-import { isEmptyObject } from "@/utils/isEmptyObject"
-import HomeLongfor from "./c-cpns/home-longfor"
-import SectionV3 from "./c-cpns/section-v3"
+import React, { memo, useEffect } from 'react'
+import HomeBanner from './c-cpns/home-banner'
+import { HomeWrapper } from './style'
+import { useDispatch, useSelector, shallowEqual } from 'react-redux'
+import { fetchHomeListAciton } from '@/store/modules/home'
+import SectionV1 from './c-cpns/section-v1'
+import SectionV2 from './c-cpns/section-v2'
+import { isEmptyObject } from '@/utils/isEmptyObject'
+import HomeLongfor from './c-cpns/home-longfor'
+import SectionV3 from './c-cpns/section-v3'
+import { changeHeaderConfigAction } from '@/store/modules/main'
 
 const Home = memo(() => {
 	/** 从redux中获取数据 */
@@ -27,6 +28,7 @@ const Home = memo(() => {
 	const dispatch = useDispatch()
 	useEffect(() => {
 		dispatch(fetchHomeListAciton())
+		dispatch(changeHeaderConfigAction({ isFixed: true, isHome: true }))
 	}, [dispatch])
 
 	return (

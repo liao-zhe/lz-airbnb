@@ -12,7 +12,7 @@ export const PhotoWallWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 
-	.top {
+	> .top {
 		position: relative;
 		height: 86px;
 

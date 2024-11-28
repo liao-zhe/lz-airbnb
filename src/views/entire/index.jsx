@@ -12,7 +12,7 @@ const Entire = memo(() => {
 
 	useEffect(() => {
 		dispatch(fetchEntireDataAction(0))
-		dispatch(changeHeaderConfigAction({ isFixed: true }))
+		dispatch(changeHeaderConfigAction({ isFixed: true, isHome: false }))
 	}, [dispatch])
 	return (
 		<EntireWrapper>
