@@ -3,14 +3,17 @@ import styled from 'styled-components'
 export const HeaderWrapper = styled.div`
 	.content {
 		position: relative;
-		z-index: 99;
-		border-bottom: 1px solid #eee;
-		border-color: ${props => (props.theme.isTransparent ? 'transparent' : '#eee')};
+		z-index: 9;
 		background-color: ${props => (props.theme.isTransparent ? 'trasnparent' : '#fff')};
 		> .top {
 			display: flex;
 			align-items: center;
 			height: 80px;
+		}
+		.search {
+			height: ${props => (props.theme.isTransparent ? '100px' : '0px')};
+			border-bottom: 1px solid #eee;
+			border-color: ${props => (props.theme.isTransparent ? 'transparent' : '#eee')};
 		}
 	}
 	.cover {
@@ -20,7 +23,6 @@ export const HeaderWrapper = styled.div`
 		top: 0;
 		bottom: 0;
 		background-color: rgba(0, 0, 0, 0.3);
-		z-index: 9;
 	}
 
 	&.fixed {
@@ -31,9 +33,4 @@ export const HeaderWrapper = styled.div`
 		background-color: ${props => (props.theme.isTransparent ? 'transparent' : '#fff')};
 		z-index: 9;
 	}
-`
-
-export const SearchWrapper = styled.div`
-	height: ${props => (props.$isSearch ? '100px' : '0')};
-	transition: height 250ms ease;
 `

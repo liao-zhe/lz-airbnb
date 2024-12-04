@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const TabsWrapper = styled.div`
 	display: flex;
-	color: ${props => (props.theme.isTransparent ? '#fff' : props.theme.text.primaryColor)};
+	color: ${props => (props.theme.isTransparent ? '#fff' : props.theme.color.primaryColor)};
 	.tab {
 		position: relative;
 		width: 64px;
