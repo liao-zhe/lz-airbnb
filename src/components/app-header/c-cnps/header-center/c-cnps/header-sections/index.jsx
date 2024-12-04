@@ -4,7 +4,6 @@ import { SectionsWrapper } from './style'
 
 const HeaderSections = memo(props => {
 	const { searchInfos = [] } = props
-
 	return (
 		<SectionsWrapper>
 			{searchInfos.map((item, index) => {
