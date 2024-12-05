@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react'
+import React, { memo, useState } from 'react'
 import { HeaderWrapper } from './styles'
 import HeaderLeft from './c-cnps/header-left'
 import HeaderCenter from './c-cnps/header-center'
