@@ -1,12 +1,11 @@
 import React, { memo } from 'react'
 import { LeftWrapper } from './style'
 import IconLogo from '@/assets/svg/icon-logo'
-import { useNavigate } from 'react-router-dom'
 
-const HeaderLeft = memo(() => {
-	const navigate = useNavigate()
+const HeaderLeft = memo(props => {
+	const { logoClick } = props
 	const logoClickHandler = () => {
-		navigate('/')
+		logoClick && logoClick()
 	}
 	return (
 		<LeftWrapper>
