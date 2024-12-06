@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const HeaderWrapper = styled.div`
 	.content {
 		position: relative;
-		z-index: 9;
+		z-index: 999;
 		transition: all 250ms ease;
 		background-color: ${props => (props.theme.isTransparent ? 'trasnparent' : '#fff')};
 		border-bottom: 1px solid #eee;
@@ -21,6 +21,7 @@ export const HeaderWrapper = styled.div`
 		right: 0;
 		top: 0;
 		bottom: 0;
+		z-index: 99;
 		background-color: rgba(0, 0, 0, 0.3);
 	}
 
