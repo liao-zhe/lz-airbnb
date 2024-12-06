@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { memo, useRef } from 'react'
+import React, { memo } from 'react'
 import { SectionsWrapper } from './style'
 
 const HeaderSections = memo(props => {
